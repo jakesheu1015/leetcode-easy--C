@@ -53,3 +53,18 @@ bool containsNearbyDuplicate(int* nums, int numsSize, int k)
 这个是网上看到的别人的答案，还没看懂，唉。。。我好菜*——*
 等看明白了再过来补充。（2019.4.12）
 */
+
+提供另一種解法
+bool containsNearbyDuplicate(int* nums, int numsSize, int k)
+{
+    int i, j;
+    for (i=0;i<numsSize;i++)
+    {
+        for (j=i;j<numsSize;j++)
+        {
+            if( (nums[i]==nums[j]) && ((j-i)==k) )
+                return 1;
+        }
+    }
+    return 0;
+}
